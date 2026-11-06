@@ -1,0 +1,19 @@
+# Combining marks: zero-width glyphs, drawn from the same accent drawings as the accented
+# capitals (glyphs-mono.txt, MARKS). The mark/mkmk features attach them to every letter, so
+# decomposed text (A + U+0301) sets like the precomposed letter.
+#   name  codepoint = drawing [key=value …]
+
+gravecomb         U+0300 = gravecomb.cap         src=draft
+acutecomb         U+0301 = acutecomb.cap         src=draft
+circumflexcomb    U+0302 = circumflexcomb.cap    src=draft
+tildecomb         U+0303 = tildecomb.cap         src=draft
+macroncomb        U+0304 = macroncomb.cap        src=draft
+brevecomb         U+0306 = brevecomb.cap         src=draft
+dotaccentcomb     U+0307 = dotaccentcomb.cap     src=draft
+dieresiscomb      U+0308 = dieresiscomb.cap      src=draft
+ringcomb          U+030A = ringcomb.cap          src=draft
+hungarumlautcomb  U+030B = hungarumlautcomb.cap  src=draft
+caroncomb         U+030C = caroncomb.cap         src=draft
+commaaccentcomb   U+0326 = commaaccentcomb.cap   src=draft
+cedillacomb       U+0327 = cedillacomb.cap       src=draft
+ogonekcomb        U+0328 = ogonekcomb.cap        src=draft

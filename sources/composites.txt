@@ -1,0 +1,97 @@
+# Accented capitals, built row-by-row from a base letter + one or more marks.
+#   Name = Base + mark [+ mark] [key=value …]   (unicode inferred from the AGL glyph name)
+# Lowercase codepoints (à, é, ß …) are mapped to these same capital glyphs automatically.
+# src=draft marks a composite added after the reference set was traced (see FONTLOG.txt).
+
+# Latin-1
+Agrave = A + gravecomb.cap
+Aacute = A + acutecomb.cap
+Acircumflex = A + circumflexcomb.cap
+Atilde = A + tildecomb.cap
+Adieresis = A + dieresiscomb.cap
+Aring = A + ringcomb.cap
+Ccedilla = C + cedillacomb.cap
+Egrave = E + gravecomb.cap
+Eacute = E + acutecomb.cap
+Ecircumflex = E + circumflexcomb.cap
+Edieresis = E + dieresiscomb.cap
+Igrave = I + gravecomb.cap
+Iacute = I + acutecomb.cap
+Icircumflex = I + circumflexcomb.cap
+Idieresis = I + dieresiscomb.cap
+Ntilde = N + tildecomb.cap
+Ograve = O + gravecomb.cap
+Oacute = O + acutecomb.cap
+Ocircumflex = O + circumflexcomb.cap
+Otilde = O + tildecomb.cap
+Odieresis = O + dieresiscomb.cap
+Ugrave = U + gravecomb.cap
+Uacute = U + acutecomb.cap
+Ucircumflex = U + circumflexcomb.cap
+Udieresis = U + dieresiscomb.cap
+Yacute = Y + acutecomb.cap
+Ydieresis = Y + dieresiscomb.cap
+Scaron = S + caroncomb.cap
+Zcaron = Z + caroncomb.cap
+
+# Latin Extended-A (Central/Eastern European, Baltic, Turkish, Romanian…)
+Amacron = A + macroncomb.cap
+Abreve = A + brevecomb.cap
+Aogonek = A + ogonekcomb.cap
+Cacute = C + acutecomb.cap
+Ccircumflex = C + circumflexcomb.cap
+Cdotaccent = C + dotaccentcomb.cap
+Ccaron = C + caroncomb.cap
+Dcaron = D + caroncomb.cap
+Dcroat = Eth
+Emacron = E + macroncomb.cap
+Ebreve = E + brevecomb.cap
+Edotaccent = E + dotaccentcomb.cap
+Eogonek = E + ogonekcomb.cap
+Ecaron = E + caroncomb.cap
+Gcircumflex = G + circumflexcomb.cap
+Gbreve = G + brevecomb.cap
+Gdotaccent = G + dotaccentcomb.cap
+Gcommaaccent = G + commaaccentcomb.cap
+Hcircumflex = H + circumflexcomb.cap
+Itilde = I + tildecomb.cap
+Imacron = I + macroncomb.cap
+Ibreve = I + brevecomb.cap
+Iogonek = I + ogonekcomb.cap
+Idotaccent = I + dotaccentcomb.cap
+Jcircumflex = J + circumflexcomb.cap
+Kcommaaccent = K + commaaccentcomb.cap
+Lacute = L + acutecomb.cap
+Lcommaaccent = L + commaaccentcomb.cap
+Nacute = N + acutecomb.cap
+Ncommaaccent = N + commaaccentcomb.cap
+Ncaron = N + caroncomb.cap
+Omacron = O + macroncomb.cap
+Obreve = O + brevecomb.cap
+Ohungarumlaut = O + hungarumlautcomb.cap
+Racute = R + acutecomb.cap
+Rcommaaccent = R + commaaccentcomb.cap
+Rcaron = R + caroncomb.cap
+Sacute = S + acutecomb.cap
+Scircumflex = S + circumflexcomb.cap
+Scedilla = S + cedillacomb.cap
+Scommaaccent = S + commaaccentcomb.cap
+Tcedilla = T + cedillacomb.cap  src=draft                   # Ţ U+0162 (Gagauz, old Romanian)
+uni021A = T + commaaccentcomb.cap  src=draft                # Ț U+021A (Romanian)
+Tcaron = T + caroncomb.cap
+Utilde = U + tildecomb.cap
+Umacron = U + macroncomb.cap
+Ubreve = U + brevecomb.cap
+Uring = U + ringcomb.cap
+Uhungarumlaut = U + hungarumlautcomb.cap
+Uogonek = U + ogonekcomb.cap
+Wcircumflex = W + circumflexcomb.cap
+Ycircumflex = Y + circumflexcomb.cap
+Zacute = Z + acutecomb.cap
+Zdotaccent = Z + dotaccentcomb.cap
+
+# Additional
+Wgrave = W + gravecomb.cap
+Wacute = W + acutecomb.cap
+Wdieresis = W + dieresiscomb.cap
+Ygrave = Y + gravecomb.cap

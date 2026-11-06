@@ -1,0 +1,251 @@
+FONTLOG for Sixrow and Sixrow Mono
+==================================
+
+This file provides detailed information on the Sixrow font software. This
+information should be distributed along with the Sixrow fonts and any
+derivative works.
+
+
+Basic font information
+----------------------
+
+Sixrow is a scanline display typeface. Every capital is drawn on a grid six
+rows tall, and the gap between the rows is a variable axis: at 0 the strokes
+are solid, and opened up each letter splits into separate horizontal lines.
+
+There are two families, Sixrow (proportional) and Sixrow Mono. Each is a
+variable font with four axes and 16 static styles (Thin to ExtraBold, upright
+and italic), in TTF and WOFF2:
+
+  wght  Weight     100 to 800   default 400   stem thickness
+  wdth  Width       75 to 150   default 100   letter body and spacing
+  slnt  Slant      -16 to 0     default 0     stair-step italic: rows shift, strokes stay upright
+  SCAN  Scanline     0 to 30    default 10    gap between the rows, % of the row pitch
+
+The character set has 372 code points, the whole of Google Fonts' Latin Core
+set, with the accents for every European Union language written in Latin and
+dozens more. Sixrow is capitals only: lowercase code points map to the
+capitals, so lowercase text sets as capitals.
+
+Designer:     Matt Waite
+Manufacturer: Excellent
+Web:          https://www.excellent.so/type
+Source:       https://github.com/excellent-so/sixrow
+Licence:      SIL Open Font License, Version 1.1, with no Reserved Font Name
+              (OFL.txt)
+
+
+The reference lettering
+-----------------------
+
+The capitals A to Z, the figures 0 to 9 and . , ( ) & $ - © were traced
+from six images of lettering in reference/samples/ ("X-CTRY RACING ©2024",
+"BLUE TOBACCO SMOKE...", "AEROBIC / TRAIL RUNNING", "AKIHABARA" and two
+others). That lettering is Matt Waite's own original design. These glyphs are
+marked src=sample in the sources.
+
+The tabular 1 (one.tf) in Sixrow, and the 1, I, M, W, hyphen and parentheses
+in Sixrow Mono, are the traced forms.
+
+
+How the fonts are built
+-----------------------
+
+No font editor is involved. Every glyph is a plain-text grid in sources/
+(glyphs-mono.txt, glyphs-proportional.txt), one character per half-unit and
+one line per row; accented capitals are a letter plus a mark
+(composites.txt), and the combining marks reuse the same accent drawings
+(combining.txt). sources/config.toml holds the name, metrics and axis ranges.
+
+tools/build.py turns the grids into upright rectangles, builds eight masters
+and merges them into the variable fonts with fontTools, then instances the 16
+static styles of each family. Kerning in Sixrow is generated from the row
+profiles of each pair of letters. The mark and mkmk features attach the
+combining marks to every letter, so decomposed text sets like the
+precomposed letters. The build is reproducible: the same sources give
+byte-identical fonts.
+
+    uv venv .venv --python 3.12
+    uv pip install --python .venv/bin/python -r requirements.txt
+    .venv/bin/python tools/build.py
+
+
+Glyphs drawn by Claude
+----------------------
+
+Glyphs marked src=draft in the sources were drawn by Claude, an AI model made
+by Anthropic, working under Matt Waite's direction: in the same grid, from
+the traced letters' stems, rows and corners. They are listed here by code
+point. The accent marks used for the accented capitals and combining marks
+are among them; the 85 accented capitals themselves are assembled by
+tools/glyphs.py from a base letter and one of those marks (Đ reuses Ð).
+
+Drawn for the working version (2026-10-22), 74 glyphs in Sixrow Mono:
+
+  U+0021           !    exclam
+  U+0022           "    quotedbl
+  U+0023           #    numbersign
+  U+0025           %    percent
+  U+0027           '    quotesingle
+  U+002A           *    asterisk
+  U+002B           +    plus
+  U+002F           /    slash
+  U+003A           :    colon
+  U+003B           ;    semicolon
+  U+003C           <    less
+  U+003D           =    equal
+  U+003E           >    greater
+  U+003F           ?    question
+  U+0040           @    at
+  U+005B           [    bracketleft
+  U+005C           \    backslash
+  U+005D           ]    bracketright
+  U+005E           ^    asciicircum
+  U+005F           _    underscore
+  U+0060           `    grave
+  U+007B           {    braceleft
+  U+007C           |    bar
+  U+007D           }    braceright
+  U+007E           ~    asciitilde
+  U+00A1           ¡    exclamdown
+  U+00A2           ¢    cent
+  U+00A3           £    sterling
+  U+00A4           ¤    currency
+  U+00A5           ¥    yen
+  U+00A6           ¦    brokenbar
+  U+00A7           §    section
+  U+00A8           ¨    dieresis
+  U+00AB           «    guillemotleft
+  U+00AC           ¬    logicalnot
+  U+00AE           ®    registered
+  U+00AF           ¯    macron
+  U+00B0           °    degree
+  U+00B1           ±    plusminus
+  U+00B4           ´    acute
+  U+00B6           ¶    paragraph
+  U+00B7           ·    periodcentered
+  U+00B8           ¸    cedilla
+  U+00BB           »    guillemotright
+  U+00BF           ¿    questiondown
+  U+00C6           Æ    AE
+  U+00D0           Ð    Eth
+  U+00D7           ×    multiply
+  U+00D8           Ø    Oslash
+  U+00DE           Þ    Thorn
+  U+00DF U+1E9E    ßẞ   uni1E9E
+  U+00F7           ÷    divide
+  U+0126           Ħ    Hbar
+  U+013D           Ľ    Lcaron
+  U+013F           Ŀ    Ldot
+  U+0141           Ł    Lslash
+  U+0152           Œ    OE
+  U+0166           Ŧ    Tbar
+  U+2013           –    endash
+  U+2014           —    emdash
+  U+2018           ‘    quoteleft
+  U+2019           ’    quoteright
+  U+201A           ‚    quotesinglbase
+  U+201C           “    quotedblleft
+  U+201D           ”    quotedblright
+  U+201E           „    quotedblbase
+  U+2022           •    bullet
+  U+2026           …    ellipsis
+  U+2039           ‹    guilsinglleft
+  U+203A           ›    guilsinglright
+  U+20AC           €    Euro
+  U+2122           ™    trademark
+  U+2212           −    minus
+  (no code point)       zero.plain (the plain zero on ss01)
+
+Added for 1.000 (2026-11-06), 36 glyphs in both families:
+
+  U+00AA           ª    ordfeminine
+  U+00B2           ²    twosuperior
+  U+00B3           ³    threesuperior
+  U+00B5           µ    mu
+  U+00B9           ¹    onesuperior
+  U+00BA           º    ordmasculine
+  U+00BC           ¼    onequarter
+  U+00BD           ½    onehalf
+  U+00BE           ¾    threequarters
+  U+0132           Ĳ    IJ
+  U+0149           ŉ    napostrophe
+  U+014A           Ŋ    Eng
+  U+0162           Ţ    Tcedilla
+  U+021A           Ț    uni021A
+  U+02C6           ˆ    circumflex
+  U+02C7           ˇ    caron
+  U+02D8           ˘    breve
+  U+02D9           ˙    dotaccent
+  U+02DA           ˚    ring
+  U+02DB           ˛    ogonek
+  U+02DC           ˜    tilde
+  U+02DD           ˝    hungarumlaut
+  U+0300           ◌̀   gravecomb
+  U+0301           ◌́   acutecomb
+  U+0302           ◌̂   circumflexcomb
+  U+0303           ◌̃   tildecomb
+  U+0304           ◌̄   macroncomb
+  U+0306           ◌̆   brevecomb
+  U+0307           ◌̇   dotaccentcomb
+  U+0308           ◌̈   dieresiscomb
+  U+030A           ◌̊   ringcomb
+  U+030B           ◌̋   hungarumlautcomb
+  U+030C           ◌̌   caroncomb
+  U+0326           ◌̦   commaaccentcomb
+  U+0327           ◌̧   cedillacomb
+  U+0328           ◌̨   ogonekcomb
+
+  U+0162 now uses the cedilla; before 1.000 it showed the comma below.
+  U+0133, U+014B and U+021B, U+0163 map to the capitals above.
+  U+0237 (dotless j) maps to the traced J and U+0138 (kra) to the traced K.
+
+Proportional forms in Sixrow only (narrower or wider than the Mono drawing),
+7 glyphs:
+
+  U+0028           (    parenleft
+  U+0029           )    parenright
+  U+002D           -    hyphen
+  U+0031           1    one
+  U+0049           I    I
+  U+004D           M    M
+  U+0057           W    W
+
+Sixrow's other proportional glyphs are the Mono drawings with their empty
+columns trimmed.
+
+Not from the reference lettering and not drawn by hand: the star U+2605
+(also U+E000) is the Excellent star, computed by tools/star.py from its
+construction and sliced into the font's rows.
+
+
+ChangeLog
+---------
+
+2026-11-06  Sixrow 1.000 (Matt Waite, Excellent)
+- First public release, named Sixrow and Sixrow Mono (until now the face
+  had only a working name).
+- Licence: SIL Open Font License 1.1, no Reserved Font Name.
+- Name table: copyright, manufacturer, designer, vendor and designer URLs,
+  licence and licence URL; version 1.000; vendor ID XLNT.
+- Character set 332 -> 372 code points: Google Fonts' Latin Core is now
+  complete (see the list above).
+- Romanian: T with comma below (U+021A/021B) added, and U+0162/0163 now carry
+  a real cedilla. The comma-below accent is redrawn as the traced comma in
+  miniature, so Ș Ț and Ģ Ķ Ļ Ņ Ŗ no longer read as cedillas; the cedilla
+  now hangs from the letter's centre (on Ç and Ş it moves 2 half-units left).
+- Combining marks with mark and mkmk positioning.
+- Vertical metrics: ascender 960, descender -240, line gap 0 in hhea, OS/2
+  typo and OS/2 win (was 768 / -120 / 0, win 850 / 130), so a line is 1.2
+  times the em and accents sit inside the ascender. USE_TYPO_METRICS is set.
+- Smart dropout control in the prep table (gftools fix-nonhinting).
+
+2026-10-22  Working version 0.1.0 (not released)
+- 332 code points; variable and static fonts in both families.
+
+
+Acknowledgements
+----------------
+
+Designer: Matt Waite <matt@excellent.so>, https://www.excellent.so/type
+Glyph drafting: Claude (Anthropic), under Matt Waite's direction

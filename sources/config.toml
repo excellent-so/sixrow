@@ -1,0 +1,51 @@
+# Sixrow font build configuration. All design geometry lives here + the glyph grids.
+# "hu" = half-unit, the horizontal grid step of the glyph drawings (24 hu = one letter body).
+
+[family]
+name          = "Sixrow"           # change here and rebuild to rename every family and file
+mono_suffix   = "Mono"
+version       = "1.000"            # name ID 5 and head.fontRevision
+release_date  = "2026-11-06"       # head.created/modified, so rebuilds are byte-identical
+copyright     = "Copyright 2026 The Sixrow Project Authors (https://github.com/excellent-so/sixrow)"
+manufacturer  = "Excellent"
+designer      = "Matt Waite"
+vendor_url    = "https://www.excellent.so/type"
+designer_url  = "https://www.excellent.so/type"
+vendor_id     = "XLNT"             # OS/2 achVendID; unclaimed in Microsoft's registry on 2026-11-06
+license       = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org"
+license_url   = "https://openfontlicense.org"
+
+[grid]
+upm           = 1000
+row_pitch     = 120                # vertical distance between rows (6 cap rows)
+hu            = 14                 # font units per half-unit at wdth=100
+design_stem   = 4                  # stem width in the drawings (hu)
+mono_advance  = 38                 # mono cell (hu) — matches the samples' 4.43 rows/char
+prop_sidebearing = 60              # proportional sidebearing per side (font units at wdth=100)
+italic_angle  = 16                 # measured from samples: each row shifts 0.287 × row pitch
+
+[metrics]                          # hhea = OS/2 typo = OS/2 win; USE_TYPO_METRICS is set
+ascender      = 960                # ink reaches 840 (the accent row at SCAN 0)
+descender     = -240               # ink reaches -120 (the descender row)
+line_gap      = 0                  # 960 + 240 = 1200 = 1.2 × UPM; caps sit centred in the line box
+
+[axes.wght]                        # vertical stem thickness (font units)
+min = 100
+default = 400
+max = 800
+stem = { 100 = 16, 400 = 54, 800 = 92 }
+
+[axes.wdth]                        # horizontal scale of letter bodies + spacing (%)
+min = 75
+default = 100
+max = 150
+
+[axes.slnt]                        # stair-step italic (degrees)
+min = -16
+default = 0
+max = 0
+
+[axes.SCAN]                        # scanline gap between rows (% of row pitch)
+min = 0
+default = 10
+max = 30
