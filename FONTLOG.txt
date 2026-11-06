@@ -75,7 +75,8 @@ Glyphs drawn by Claude
 
 Glyphs marked src=draft in the sources were drawn by Claude, an AI model made
 by Anthropic, working under Matt Waite's direction: in the same grid, from
-the traced letters' stems, rows and corners. They are listed here by code
+the traced letters' stems, rows and corners. Matt Waite approved them for
+release as drawn on 2026-11-06. They are listed here by code
 point. The accent marks used for the accented capitals and combining marks
 are among them; the 85 accented capitals themselves are assembled by
 tools/glyphs.py from a base letter and one of those marks (Đ reuses Ð).
